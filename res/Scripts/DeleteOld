@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dir="~/Downloads"
+days=2
+echo -n "removing files in $dir that are older than $days days: "
+find "$dir" -mtime +$days -type f -exec echo {} \; -exec rm {} \; | wc -l
+
+
+echo -n "removing empty directories"
+find "$dir"/. -type d -empty -delete
+
+
+

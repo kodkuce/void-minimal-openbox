@@ -1,0 +1,31 @@
+#!/bin/bash
+#xmodmap -e "keycode 46 = l L l L lstroke Lstroke lstroke"
+
+SWITCH_KEYS=$(<~/Documents/Scripts/swapKeys-keys)
+
+if [ $SWITCH_KEYS == 1 ]; then
+	echo "Normal input"
+	echo 2 > ~/Documents/Scripts/swapKeys-keys
+#	xmodmap -e "keycode  32 = o O o O o O"
+#	xmodmap -e "keycode  45 = k K k K k K"
+#	xmodmap -e "keycode  46 = l L l L l L"
+#	xmodmap -e "keycode  47 = semicolon colon semicolon colon semicolon colon"
+	xmodmap -e "keycode  25 = w W w W w W"
+	xmodmap -e "keycode  38 = a A a A a A"
+	xmodmap -e "keycode  39 = s S s S s S"
+	xmodmap -e "keycode  40 = d D d D d D"
+
+else
+	echo "Switched input"
+	echo 1 > ~/Documents/Scripts/swapKeys-keys
+#	xmodmap -e "keycode  32 = Up Up Up Up Up"
+#	xmodmap -e "keycode  45 = Left Left Left Left Left"
+#	xmodmap -e "keycode  46 = Down Down Down Down Down"
+#	xmodmap -e "keycode  47 = Right Right Right Right Right"
+
+	xmodmap -e "keycode  25 = Up Up Up Up Up"
+	xmodmap -e "keycode  38 = Left Left Left Left Left"
+	xmodmap -e "keycode  39 = Down Down Down Down Down"
+	xmodmap -e "keycode  40 = Right Right Right Right Right"
+
+fi

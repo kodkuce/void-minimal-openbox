@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+Name=ZIP
+Icon=zip
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+MimeTypes=all/all;
+Exec=lxterminal --working-directory=%d -e "7z a %w %F -punsafePassword.1;bash"
+Name=Default profile
+SelectionCount=">0"

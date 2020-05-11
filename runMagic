@@ -1,0 +1,54 @@
+#!/bin/bash
+
+echo "Yey :)"
+
+#base
+sudo xbps-install -y xorg-server xorg-video-drivers xorg-minimal xorg-input-drivers xf86-video-vesa xf86-video-ati xf86-video-amdgpu xf86-input-wacom xf86-input-evdev libX11 \
+openbox paper-icon-theme numix-themes dejavu-fonts-ttf pcmanfm-qt qt5-svg rofi feh tint2 pulseaudio pavucontrol pa-applet lxterminal dbus dbus-glib gnupg sylpheed \
+tmux micro xmodmap xclip ncdu nnn mpv redshift-gtk gromit-mpx ImageMagick 
+
+#bonus comment out if thight :)
+#sudo xbps-install -y firefox krita blender libreoffice virtualbox 
+
+echo "Creating needed dirs" 
+mkdir -p ~/Documents/Apps
+mkdir -p ~/Documents/Projects
+mkdir -p ~/Documents/Scripts
+mkdir -p ~/Pictures/Wallpapers
+mkdir -p ~/Pictures/Screenshots
+mkdir -p ~/Downloads
+
+echo "Setting up bash envo"
+echo '
+#Ls and tree colors oweride in tmux killed :)
+LS_COLORS=""
+export LS_COLORS
+' >> ~/.bashrc
+
+echo 'alias lss="ls --color --group-directories-first -X"' >> ~/.bashrc
+echo 'export PATH="$PATH:~/.nimble/bin"' >> ~/.bashrc
+echo 'export PATH="$PATH:~/Documents/Apps/Watchexec"' >> ~/.bashrc
+
+
+
+echo "Setting up configs and misc stuff"
+cp -r res/.config ~/
+cp -r res/.local ~/
+cp -r res/Scripts ~/Documents
+cp res/.tmux.conf ~/
+cp res/.xinitrc ~/
+cp res/bg.png ~/Pictures/Wallpapers
+cp res/.Xmodmap ~/
+
+echo "Python sub downloader"
+#getting python subtitle script and creating one for serbian lang
+curl -o ~/Documents/Scripts/OpenSubtitlesDownload.py https://raw.githubusercontent.com/emericg/OpenSubtitlesDownload/master/OpenSubtitlesDownload.py
+cat ~/Documents/Scripts/OpenSubtitlesDownload.py  > ~/Documents/Scripts/OpenSubtitlesDownloadRS.py
+sed -i "s/opt_languages = \['eng'\].*/opt_languages = ['scc','hrv','mne','bos']/g" ~/Documents/Scripts/OpenSubtitlesDownloadRS.py
+
+echo "Fixing numix theme"
+#edit Numix theme openbox colors to match terminal
+sudo gawk -i inplace '{ gsub(/#444444/, "#121212") }; { print }' /usr/share/themes/Numix/openbox-3/themerc
+sudo gawk -i inplace '{ gsub(/#484848/, "#323232") }; { print }' /usr/share/themes/Numix/openbox-3/themerc
+
+echo "Finished :) you can now startx"

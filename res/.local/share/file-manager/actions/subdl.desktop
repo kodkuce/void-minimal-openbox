@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+Name=DownloadSub
+Icon=empty
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+MimeTypes=video/*;
+Exec=python3 /home/me/Documents/Scripts/OpenSubtitlesDownload.py %f
+Name=Default profile
+SelectionCount==1

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=MicroTextEditor
+TryExec=micro
+Exec=lxterminal -e micro %f
+Icon=lxterminal
+Type=Application
+Categories=GTK;System;TerminalEmulator;
+Keywords=console;command line;execute;
+Terminal=false
+Comment[en_US]=Open micro in terminal
+Name[en_US]=MicroTextEditor

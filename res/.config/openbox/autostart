@@ -1,0 +1,23 @@
+#Set BG
+feh --bg-fill ~/Pictures/Wallpapers/bg.png
+
+#Run compositor
+#compton &
+
+#Start tint
+tint2 &
+
+#sound applet
+pa-applet &
+
+#mail 
+sylpheed &
+
+
+#redshift
+redshift-gtk -l 44:20 &
+
+#clean up downloads
+bash ~/Documents/Scripts/DeleteOld
+
+#lxterminal
