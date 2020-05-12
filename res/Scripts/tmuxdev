@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#printf $PWD
+
+
+if tmux has-session -t =$PWD;then
+printf "Session allready exist\n"
+
+	read -p "Connect to it, terminate/restart, abort (c/t/a)?" choice
+	case "$choice" in 
+	  c|C ) echo "Connecting to old session"; tmux attach-session -t =$PWD;exit 0;;
+	  t|T ) echo "Killed old created new session"; tmux kill-session -t =$PWD;;
+	  * ) printf ":(\n";exit 0;;
+	esac
+
+else
+printf "Creating new session"
+fi
+
+
+tmux new-session -d -s $PWD
+tmux select-window -t $PWD
+tmux resize-window -y 56 -x 233 #adjust to your screen size
+tmux splitw -l 10
+tmux splitw -h
+tmux select-pane -t $PWD.0
+#tmux send-keys -t dev1.0 "nnn" ENTER #TODO
+tmux splitw -hp 90
+tmux attach-session -t $PWD.1

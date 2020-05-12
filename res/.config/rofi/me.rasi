@@ -3,7 +3,7 @@
  */
 * {
     text-color:                  #EEEEEE;
-    background-color:            #444444;
+    background-color:            #121212;
     lightbg:                     #DEDEDE;
     red:                         #F0264C;
     orange:                      #F0544C; 

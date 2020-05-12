@@ -4,7 +4,7 @@ echo "Yey :)"
 
 #base
 sudo xbps-install -y xorg-server xorg-video-drivers xorg-minimal xorg-input-drivers xf86-video-vesa xf86-video-ati xf86-video-amdgpu xf86-input-wacom xf86-input-evdev libX11 \
-openbox paper-icon-theme numix-themes dejavu-fonts-ttf pcmanfm-qt qt5-svg rofi feh tint2 pulseaudio pavucontrol pa-applet lxterminal dbus dbus-glib gnupg sylpheed \
+openbox paper-icon-theme numix-themes dejavu-fonts-ttf pcmanfm-qt qt5-svg rofi feh tint2 pulseaudio pavucontrol pa-applet lxterminal dbus dbus-glib gnupg sylpheed gpick \
 tmux micro xmodmap xclip ncdu nnn mpv redshift-gtk gromit-mpx ImageMagick 
 
 #bonus comment out if thight :)
@@ -25,11 +25,11 @@ LS_COLORS=""
 export LS_COLORS
 ' >> ~/.bashrc
 
+echo 'export PATH=$PATH:~/.nimble/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:~/Documents/Apps/Watchexec' >> ~/.bashrc
+
 echo 'alias lss="ls --color --group-directories-first -X"' >> ~/.bashrc
-echo 'export PATH="$PATH:~/.nimble/bin"' >> ~/.bashrc
-echo 'export PATH="$PATH:~/Documents/Apps/Watchexec"' >> ~/.bashrc
-
-
+echo 'alias tmuxdev="bash ~/Documents/Scripts/tmuxdev"'
 
 echo "Setting up configs and misc stuff"
 cp -r res/.config ~/
