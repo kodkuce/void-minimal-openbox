@@ -24,6 +24,9 @@ tmux resize-window -y 56 -x 233 #adjust to your screen size
 tmux splitw -l 10
 tmux splitw -h
 tmux select-pane -t $PWD.0
-#tmux send-keys -t dev1.0 "nnn" ENTER #TODO
+tmux send-keys  "~/Documents/Scripts/tmux-sidep" Space "-uwt" Enter 
 tmux splitw -hp 90
+tmux select-pane -t $PWD.1
+tmux send-keys "micro" 
+tmux send-keys Enter 
 tmux attach-session -t $PWD.1
