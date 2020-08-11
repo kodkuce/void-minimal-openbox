@@ -8,7 +8,7 @@ openbox paper-icon-theme numix-themes dejavu-fonts-ttf pcmanfm-qt qt5-svg rofi f
 tmux micro xmodmap xclip ncdu nnn mpv redshift-gtk gromit-mpx ImageMagick 
 
 #bonus comment out if thight :)
-#sudo xbps-install -y firefox krita blender libreoffice virtualbox 
+#sudo xbps-install -y firefox krita blender libreoffice virtualbox-ose libvirt
 
 echo "Creating needed dirs" 
 mkdir -p ~/Documents/Apps
@@ -30,6 +30,9 @@ echo 'export PATH=$PATH:~/Documents/Apps/Watchexec' >> ~/.bashrc
 
 echo 'alias lss="ls --color --group-directories-first -X"' >> ~/.bashrc
 echo 'alias tmuxdev="bash ~/Documents/Scripts/tmuxdev"'
+
+
+
 
 echo "Setting up configs and misc stuff"
 cp -r res/.config ~/
