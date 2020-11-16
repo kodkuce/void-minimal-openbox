@@ -17,6 +17,7 @@ mkdir -p ~/Documents/Scripts
 mkdir -p ~/Pictures/Wallpapers
 mkdir -p ~/Pictures/Screenshots
 mkdir -p ~/Downloads
+mkdir -p ~/Desktop
 
 echo "Setting up bash envo"
 #echo '
