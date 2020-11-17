@@ -9,3 +9,5 @@ curl -o dl https://codeload.github.com/kodkuce/void-minimal-openbox/zip/master
 cd mysetup-master
 
 ./runMagic
+
+or git clone :)
